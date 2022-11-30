@@ -1,5 +1,5 @@
 div {
-    margin: 0px;
+    margin: -1px;
     padding: 0px;
     border: 1px;
     border-style: solid;
@@ -7,7 +7,8 @@ div {
 }
 
 .gridContainer{
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
