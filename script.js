@@ -1,6 +1,6 @@
 
 const container = document.querySelector(".gridContainer");
-const resetter = document.querySelector ('button');
+const resetter = document.querySelector ('.resetter');
 let xAmount;
 
 resetter.addEventListener('click', function(e){
@@ -25,7 +25,7 @@ function clearGrid(){
     return;
 }
 
-
+let colorAmount = 0.4;
 function makeGrid(){
     for (let i = 0; i < xAmount; i++){
         const height = document.createElement('div');
@@ -41,15 +41,30 @@ function makeGrid(){
             coordinate.style.width = `${500 / xAmount}px`;
 
             height.appendChild(coordinate);
+            coordinate.style.opacity = colorAmount;
 
-            coordinate.addEventListener('mouseover', () => {
 
-                coordinate.style.backgroundColor ="lightblue";
 
-            });
 
         }
     }
+
+    const coordinate = document.querySelectorAll('.coord')
+
+    coordinate.forEach(e => e.addEventListener('mouseover', () => {
+        e.style.backgroundColor = `black`;
+        e.style.opacity = 1
+    }));
+/*
+
+
+    function coloringOver(e){
+        coordinate.style.backgroundColor = `black`;
+        coordinate.style.opacity = parseFloat(coordinate.style.opacity) + 0.1;
+    }
+
+
+    */
 }
 
 
